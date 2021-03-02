@@ -1,0 +1,67 @@
+@import './normalize.css';
+:root {
+  --color-text:#666;
+  --color-high-text:#ff5777;
+  --color-tint: #ff8198;
+  --color-background: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background:  var(--color-background);
+  color: var(--color-text);
+  width: 100vw;
+}
+a{
+  color: var(--color-text);
+  text-decoration: none;
+}
+.clear-fix::after{
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.clear-fix{
+  zoom:1;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+li{
+  list-style: none;
+}
+img{
+  vertical-align: middle;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 2382488 */
+  src: url('//at.alicdn.com/t/font_2382488_pygyzeo76aq.eot');
+  src: url('//at.alicdn.com/t/font_2382488_pygyzeo76aq.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2382488_pygyzeo76aq.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2382488_pygyzeo76aq.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2382488_pygyzeo76aq.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2382488_pygyzeo76aq.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html,body{
+  height: 100%;
+}
