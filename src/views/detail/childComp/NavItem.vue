@@ -29,7 +29,8 @@
     },
     methods: {
       itemClick(index) {
-        this.currentIndex=index
+        this.currentIndex=index;
+        this.$emit('itemClick',index)
       },
       iconClick(){
       this.$router.back();

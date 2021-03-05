@@ -1,7 +1,7 @@
 <template>
   <div class="goods-item" @click='goodsClick'>
     <!-- 图片添加监听加载完成事件 -->
-    <img :src="item.show.img" alt="" @load="imgLoad">
+    <img :src="showImg" alt="" @load="imgLoad">
     <div class="goods-info">
       <p class="title">{{item.title}}</p>
       <div class="text">
@@ -22,12 +22,23 @@
     methods:{
       // 用事件总线监听或者用vuex,到Home.vue里接收
       imgLoad(){
-        this.$bus.$emit('itemImgLoad')
+        if(this.$route.path==='/home'){
+          this.$bus.$emit('homeImgLoad')
+        }else if(this.$route.path==='/detail'){
+          this.$bus.$emit('detailImgLoad')
+        }
+        
       },
       goodsClick(){
         this.$router.push('/detail/'+this.item.iid)
       }
-    }
+    },
+    computed: {
+      showImg() {
+        // 在首页里图片是放在show下面，而在详情里图片是直接在item下
+        return this.item.image || this.item.show.img;
+      }
+    },
   }
 </script>
 
